@@ -1,0 +1,122 @@
+/* universal selector */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* fonts */
+    font-family: 'Poppins', 'sans-serif';
+}
+
+
+/* wrapper styling */
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./assets/gradient-bg.jpg);
+    /* background-size: cover;
+    background-position: center; */
+    /* you can use flex too */
+    display: grid;
+    place-items: center;
+}
+
+.game-info {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.5rem 3rem;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tic-tac-toe {
+    width: 90%;
+    max-width: 20rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*make square tic-tac-toe (height and width bhi same kar sakte hai)*/
+    aspect-ratio: 1/1;
+    margin-top: 5rem;
+    padding: 2rem;
+    /*set border prop*/
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+}
+
+
+/* box styling */
+
+.box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* cell properties */
+
+.box1,
+.box2,
+.box4,
+.box5 {
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.box3,
+.box4,
+.box6 {
+    border-bottom: 2px solid white;
+}
+
+.box7,
+.box8 {
+    border-right: 2px solid white;
+}
+
+
+/* styling new game button (initially hidden)*/
+
+.btn {
+    /* text prop */
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    /*border prop*/
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    display: none;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+}
+
+
+/* properties for active class for new game button (dynamic) */
+
+.btn.active {
+    display: flex;
+}
+
+
+/* properties for dynamic win class, it is applied when the player wins (it changes the background color to green (dynamic)  */
+
+.win {
+    background-color: rgba(0, 255, 0, 0.3);
+}
